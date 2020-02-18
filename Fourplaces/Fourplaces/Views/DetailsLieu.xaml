@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<forms:BaseContentPage
+    xmlns:forms="clr-namespace:Storm.Mvvm.Forms;assembly=Storm.Mvvm.Forms"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dtos="clr-namespace:TD.Api.Dtos"
+    mc:Ignorable="d"
+    x:Class="Fourplaces.Views.DetailsLieu">
+    <forms:BaseContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding PlaceItem.Title}"/>
+    </forms:BaseContentPage.ToolbarItems>
+    <StackLayout>
+        <Image Source="{Binding PlaceItem.ImageId, Converter={StaticResource ImageIdConverter}}" 
+               HeightRequest="250" WidthRequest="250"/>
+        <Label Text="{Binding PlaceItem.Description}" />
+
+        <ListView ItemsSource="{Binding PlaceItem.Comments}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="dtos:CommentItem">
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding Author.ImageId, Converter={StaticResource ImageIdConverter}}" HeightRequest="75" WidthRequest="75"/>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Author.FirstName}"  Style="{StaticResource Key=UserNameComment}" />
+                                    <Label Text="{Binding Date}" Style="{StaticResource Key=DateLabel}" />
+                                </StackLayout>
+                                <Label Text="{Binding Text}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+            <ImageButton Style="{StaticResource Key=MapButton}"/>
+            <ImageButton Style="{StaticResource Key=CommentButton}"/>
+            
+        </StackLayout>
+    </StackLayout>
+</forms:BaseContentPage>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvvm:MvvmApplication
+    xmlns:mvvm="clr-namespace:Storm.Mvvm;assembly=Storm.Mvvm.Forms" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Fourplaces.Models"
+             mc:Ignorable="d"
+             x:Class="Fourplaces.App">
+    <Application.Resources>
+        <local:ImageIdConverter x:Key="ImageIdConverter"/>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Tahoma" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+        <Style TargetType="Label" x:Key="UserNameComment">
+            <Setter Property="FontFamily" Value="Tahoma" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="TextDecorations" Value="Underline"/>
+        </Style>
+        <Style TargetType="Label" x:Key="DateLabel">
+            <Setter Property="FontFamily" Value="Tahoma" />
+            <Setter Property="TextColor" Value="#DB696A" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#2196F3"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="CornerRadius" Value="25"/>
+        </Style>
+        <Style TargetType="ImageButton" x:Key="MapButton">
+            <Setter Property="Source" Value="googleMaps.png"/>
+            <Setter Property="BorderColor" Value="Transparent"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="WidthRequest" Value="50"/>
+        </Style>
+        <Style TargetType="ImageButton" x:Key="CommentButton">
+            <Setter Property="Source" Value="Comments.png"/>
+            <Setter Property="BorderColor" Value="Transparent"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="HeightRequest" Value="50"/>
+            <Setter Property="WidthRequest" Value="50"/>
+        </Style>
+    </Application.Resources>
+</mvvm:MvvmApplication>

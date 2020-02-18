@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Fourplaces.Views.Connexion"
+             Title="Connexion">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Email" HorizontalOptions="Center" />
+            <Entry x:Name="emailEntry" Placeholder="example@gmail.com" Text="{Binding Mail, Mode=TwoWay}" HorizontalTextAlignment="Center"/>
+            <Label Text="Password" HorizontalOptions="Center" />
+            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="* * * * * * *" Text="{Binding Mdp, Mode=TwoWay}"  HorizontalTextAlignment="Center"/>
+            <Button Text="Connexion" Command="{Binding Connexion}" />
+            <Button Text="Inscription" Command="{Binding Inscription}" />
+            <Label Text="{Binding ErrorMessage, Mode=TwoWay}" HorizontalOptions="Center" TextColor="Red"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
