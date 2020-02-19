@@ -5,11 +5,11 @@ using Storm.Mvvm.Forms;
 namespace Fourplaces.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AjouterLieu : BaseContentPage
+    public partial class AfficherLieuMap : BaseContentPage
     {
-        public AjouterLieu()
+        public AfficherLieuMap(double longitude, double latitude, string name)
         {
-            BindingContext = new AjouterLieuViewModel();
+            BindingContext = new AfficherLieuViewModel(longitude, latitude, name);
             InitializeComponent();
         }
     }

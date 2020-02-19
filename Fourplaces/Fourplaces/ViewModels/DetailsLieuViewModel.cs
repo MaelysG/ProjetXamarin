@@ -1,4 +1,5 @@
 ﻿using Common.Api.Dtos;
+using Fourplaces.Views;
 using Storm.Mvvm;
 using System;
 using System.Net.Http;
@@ -27,9 +28,10 @@ namespace Fourplaces.ViewModels
             Maps = new Command(Carte);
         }
 
-        private void Carte(object obj)
+        private /*async*/ void Carte(object obj)
         {
-            throw new NotImplementedException();
+            //Erreur que je comprend pas : API KEY pas mise dans manifest application -> pourtant elle y est
+            //await NavigationService.PushAsync(new AfficherLieuMap(PlaceItem.Longitude, PlaceItem.Latitude, PlaceItem.Title));
         }
 
         public async void GetPlace(int id)

@@ -1,10 +1,6 @@
-﻿using Common.Api.Dtos;
-using Fourplaces.Views;
+﻿using Fourplaces.Views;
 using Storm.Mvvm;
-using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Windows.Input;
 using TD.Api.Dtos;
 using Xamarin.Forms;

@@ -36,7 +36,7 @@
         </ListView>
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
-            <ImageButton Style="{StaticResource Key=MapButton}"/>
+            <ImageButton Style="{StaticResource Key=MapButton}" Command="{Binding Maps}"/>
             <ImageButton Style="{StaticResource Key=CommentButton}"/>
             
         </StackLayout>

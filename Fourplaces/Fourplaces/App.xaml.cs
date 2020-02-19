@@ -5,7 +5,7 @@ namespace Fourplaces
 {
     public partial class App : MvvmApplication
     {
-        public App() : base(() => new ListeLieux())
+        public App() : base(() => new Connexion())
         {
             InitializeComponent();
         }

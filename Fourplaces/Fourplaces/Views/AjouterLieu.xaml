@@ -1,14 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+<forms:BaseContentPage
+    xmlns:forms="clr-namespace:Storm.Mvvm.Forms;assembly=Storm.Mvvm.Forms"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dtos="clr-namespace:TD.Api.Dtos"
+    mc:Ignorable="d"
              x:Class="Fourplaces.Views.AjouterLieu"
              Title="Ajout d'un lieu">
-    <ContentPage.Content>
-        <StackLayout>
-            
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Label Text="Nom du lieu" HorizontalOptions="Center" />
+        <Entry x:Name="nameEntry" Text="{Binding Name, Mode=TwoWay}" HorizontalTextAlignment="Center"/>
+        <Label Text="Description" HorizontalOptions="Center" />
+        <Editor x:Name="description" Text="{Binding Description, Mode=TwoWay}"/>
+        <!-- <Button Text="Ajouter une photo" Command="{Binding Photo}" HeightRequest="50"/> -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Lattitude" HorizontalOptions="Center" />
+                <Entry x:Name="lattitudeEntry" Text="{Binding Lattitude, Mode=TwoWay}" HorizontalTextAlignment="Center" WidthRequest="100"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Longitude" HorizontalOptions="Center" />
+                <Entry x:Name="longitudeEntry" Text="{Binding Longitude, Mode=TwoWay}" HorizontalTextAlignment="Center" WidthRequest="100"/>
+            </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+       <Button Text="Ajouter" Command="{Binding Add}" HeightRequest="50" />
+    </StackLayout>
+</forms:BaseContentPage>

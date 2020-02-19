@@ -27,9 +27,10 @@
             <Setter Property="VerticalTextAlignment" Value="Center"/>
         </Style>
         <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#2196F3"/>
-            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BackgroundColor" Value="#FFAE9F"/>
+            <Setter Property="TextColor" Value="Black"/>
             <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="WidthRequest" Value="125"/>
         </Style>
         <Style TargetType="ImageButton" x:Key="MapButton">
             <Setter Property="Source" Value="googleMaps.png"/>

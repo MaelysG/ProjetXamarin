@@ -8,19 +8,21 @@
     xmlns:dtos="clr-namespace:TD.Api.Dtos"
     mc:Ignorable="d"
     x:Class="Fourplaces.Views.ListeLieux">
-    
-    <ScrollView>
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
         <ListView ItemsSource="{Binding Places}"
             HasUnevenRows="True"
             SeparatorColor="Black"
             ItemTapped="ShowDetails">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="dtos:PlaceItemSummary">
-                    <ImageCell Text="{Binding Title}"
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="dtos:PlaceItemSummary">
+                        <ImageCell Text="{Binding Title}"
                                ImageSource="{Binding ImageId, Converter={StaticResource ImageIdConverter}}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        
-    </ScrollView>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Ajouter" Command="{Binding Add}" />
+        </StackLayout>
+    </ContentPage.Content>
 </forms:BaseContentPage>

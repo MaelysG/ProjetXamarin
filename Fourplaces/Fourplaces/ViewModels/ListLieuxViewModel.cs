@@ -17,15 +17,15 @@ namespace Fourplaces.ViewModels
     class ListLieuxViewModel : ViewModelBase
     {
         public ObservableCollection<PlaceItemSummary> Places { get; set; }
-        public ICommand CreateLieuCommand { get; }
+        public ICommand Add { get; }
 
         public ListLieuxViewModel()
         {
-            
             Places = new ObservableCollection<PlaceItemSummary>();
+            Add = new Command(Ajouter);
         }
 
-        public async override Task OnResume()
+        public override async Task OnResume()
         {
             var location = await Geolocation.GetLastKnownLocationAsync();
             List<PlaceItemSummary> Lieux = await GetAllPlaces();
@@ -58,5 +58,9 @@ namespace Fourplaces.ViewModels
             await NavigationService.PushAsync(new DetailsLieu(place.Id));
         }
 
+        private async void Ajouter(object obj)
+        {
+            await NavigationService.PushAsync(new AjouterLieu());
+        }
     }
 }
